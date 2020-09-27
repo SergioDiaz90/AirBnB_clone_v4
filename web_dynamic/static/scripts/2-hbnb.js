@@ -10,4 +10,13 @@ $(document).ready(function () {
     const dataNames = Object.keys(amenities);
     $('.amenities h4').text(dataNames.join(', '));
   });
+
+  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, textStatus) {
+    console.log('llega')
+    if (textStatus === 'success') {
+      $('#api_status').addClass('available');
+    } else {
+      $('#api_status').removeClass('available');
+    }
+  });
 });
