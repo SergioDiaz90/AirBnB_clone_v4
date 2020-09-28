@@ -18,7 +18,7 @@ $(document).ready(function () {
       $('#api_status').removeClass('available');
     }
   });
-  function searchPlaces() {
+  $('.container button').click(function () {
     $.ajax({
       url: 'http://0.0.0.0:5001/api/v1/places_search/',
       type: 'POST',
@@ -46,5 +46,5 @@ $(document).ready(function () {
         console.log(error);
       }
     });
-  }
+  });
 });
